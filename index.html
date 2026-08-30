@@ -5,12 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QR Code Generator</title>
   <meta name="description" content="สร้าง QR Code ออนไลน์ฟรี ใส่ข้อความหรือลิงก์แล้วดาวน์โหลดเป็นรูปภาพได้ทันที" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-glow bg-glow--one"></div>
+  <div class="bg-glow bg-glow--two"></div>
+
   <div class="app">
     <header class="app-header">
-      <h1>🔳 QR Code Generator</h1>
+      <div class="brand">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+            <rect x="14.5" y="14.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+            <rect x="18.5" y="14.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+            <rect x="14.5" y="18.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+            <rect x="18.5" y="18.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+          </svg>
+        </span>
+        <h1>QR Code Generator</h1>
+      </div>
       <p>สร้าง QR Code จากข้อความหรือลิงก์ของคุณ แล้วดาวน์โหลดใช้งานได้ทันที</p>
     </header>
 
@@ -46,18 +65,28 @@
 
           <div class="option">
             <label for="fg-color">สีลาย QR</label>
-            <input type="color" id="fg-color" value="#000000" />
+            <div class="color-field">
+              <input type="color" id="fg-color" value="#000000" />
+              <span class="color-swatch-label">สีเข้ม</span>
+            </div>
           </div>
 
           <div class="option">
             <label for="bg-color">สีพื้นหลัง</label>
-            <input type="color" id="bg-color" value="#ffffff" />
+            <div class="color-field">
+              <input type="color" id="bg-color" value="#ffffff" />
+              <span class="color-swatch-label">สีอ่อน</span>
+            </div>
           </div>
         </div>
 
         <div class="actions">
-          <button id="generate-btn" type="button">สร้าง QR Code</button>
-          <button id="download-btn" type="button" disabled>ดาวน์โหลด PNG</button>
+          <button id="generate-btn" type="button">
+            <span>สร้าง QR Code</span>
+          </button>
+          <button id="download-btn" type="button" disabled>
+            <span>ดาวน์โหลด PNG</span>
+          </button>
         </div>
 
         <p id="error-msg" class="error-msg" hidden></p>
@@ -65,13 +94,25 @@
 
       <section class="panel preview-panel">
         <div id="qr-canvas-wrapper" class="qr-canvas-wrapper">
-          <p class="placeholder">QR Code ของคุณจะแสดงที่นี่</p>
+          <div class="placeholder">
+            <svg class="placeholder-icon" viewBox="0 0 24 24" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" />
+              <rect x="14.5" y="14.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+              <rect x="18.5" y="14.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+              <rect x="14.5" y="18.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+              <rect x="18.5" y="18.5" width="2.5" height="2.5" rx="0.5" fill="currentColor" />
+            </svg>
+            <p>QR Code ของคุณจะแสดงที่นี่</p>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="app-footer">
       <p>ทำงานทั้งหมดในเบราว์เซอร์ของคุณ ไม่มีการส่งข้อมูลไปที่เซิร์ฟเวอร์ใด ๆ</p>
+      <p class="credit">Made with <span class="heart">♥</span> by <strong>PatiyutSam</strong></p>
     </footer>
   </div>
 
