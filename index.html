@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <meta name="description" content="สร้าง QR Code ออนไลน์ฟรี ใส่ข้อความหรือลิงก์แล้วดาวน์โหลดเป็นรูปภาพได้ทันที" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>🔳 QR Code Generator</h1>
+      <p>สร้าง QR Code จากข้อความหรือลิงก์ของคุณ แล้วดาวน์โหลดใช้งานได้ทันที</p>
+    </header>
+
+    <main class="app-main">
+      <section class="panel form-panel">
+        <label for="text-input">ข้อความ / ลิงก์</label>
+        <textarea
+          id="text-input"
+          rows="3"
+          placeholder="เช่น https://example.com หรือข้อความใด ๆ"
+        ></textarea>
+
+        <div class="options-grid">
+          <div class="option">
+            <label for="size-input">ขนาด (px)</label>
+            <select id="size-input">
+              <option value="150">150 × 150</option>
+              <option value="250" selected>250 × 250</option>
+              <option value="350">350 × 350</option>
+              <option value="500">500 × 500</option>
+            </select>
+          </div>
+
+          <div class="option">
+            <label for="ecc-input">ระดับแก้ไขข้อผิดพลาด</label>
+            <select id="ecc-input">
+              <option value="L">L - ต่ำ (7%)</option>
+              <option value="M" selected>M - ปานกลาง (15%)</option>
+              <option value="Q">Q - สูง (25%)</option>
+              <option value="H">H - สูงสุด (30%)</option>
+            </select>
+          </div>
+
+          <div class="option">
+            <label for="fg-color">สีลาย QR</label>
+            <input type="color" id="fg-color" value="#000000" />
+          </div>
+
+          <div class="option">
+            <label for="bg-color">สีพื้นหลัง</label>
+            <input type="color" id="bg-color" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="generate-btn" type="button">สร้าง QR Code</button>
+          <button id="download-btn" type="button" disabled>ดาวน์โหลด PNG</button>
+        </div>
+
+        <p id="error-msg" class="error-msg" hidden></p>
+      </section>
+
+      <section class="panel preview-panel">
+        <div id="qr-canvas-wrapper" class="qr-canvas-wrapper">
+          <p class="placeholder">QR Code ของคุณจะแสดงที่นี่</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>ทำงานทั้งหมดในเบราว์เซอร์ของคุณ ไม่มีการส่งข้อมูลไปที่เซิร์ฟเวอร์ใด ๆ</p>
+    </footer>
+  </div>
+
+  <script src="vendor/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
