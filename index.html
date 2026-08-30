@@ -42,6 +42,14 @@
           placeholder="เช่น https://example.com หรือข้อความใด ๆ"
         ></textarea>
 
+        <label for="label-input">ชื่อกำกับ QR (ไม่บังคับ)</label>
+        <input
+          type="text"
+          id="label-input"
+          placeholder="เช่น ชื่อสินค้า หรือชื่อกิจกรรม"
+          maxlength="120"
+        />
+
         <div class="options-grid">
           <div class="option">
             <label for="size-input">ขนาด (px)</label>
@@ -107,6 +115,7 @@
             <p>QR Code ของคุณจะแสดงที่นี่</p>
           </div>
         </div>
+        <p id="qr-label" class="qr-label" hidden></p>
       </section>
     </main>
 

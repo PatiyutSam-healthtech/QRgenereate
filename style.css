@@ -133,7 +133,8 @@ body {
   color: var(--text);
 }
 
-#text-input {
+#text-input,
+#label-input {
   width: 100%;
   resize: vertical;
   padding: 12px 14px;
@@ -145,7 +146,16 @@ body {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+#label-input {
+  margin-top: 4px;
+}
+
+.form-panel label[for="label-input"] {
+  margin-top: 16px;
+}
+
 #text-input:focus,
+#label-input:focus,
 select:focus,
 input[type="color"]:focus {
   outline: none;
@@ -255,6 +265,7 @@ button:disabled {
 
 .preview-panel {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 280px;
@@ -291,6 +302,21 @@ button:disabled {
   color: var(--muted);
   text-align: center;
   font-size: 0.9rem;
+}
+
+.qr-label {
+  margin: 14px auto 0;
+  max-width: 100%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .placeholder-icon {
